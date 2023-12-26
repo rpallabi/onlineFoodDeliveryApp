@@ -1,0 +1,50 @@
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+        <br/><br/><br/>
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2 style="color: #cda45e;">Book a Table</h2>
+            <p></p>
+          </div>
+  
+          <form class="bookTableForm" data-aos="fade-up"
+            data-aos-delay="100" (submit)="bookTable()">
+            <br/>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 form-group">
+                <input type="number"  class="form-control" disabled id="ID" placeholder="User Id(From system)" name="ID" [(ngModel)]="ID">
+              </div>
+              <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="noOfSeats" id="noOfSeats" placeholder="How many seats?" [(value)]="values"
+                (keyup)="onKeyUp($event)"
+                [attr.disabled]="totalSeats<=0 ? '' : null">
+              </div>
+              <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="remainingSeats" disabled id="remainingSeats" placeholder="Seats remaining(From system)" [(ngModel)]="totalSeats">
+              </div>
+              <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-0">
+                <input type="date" name="bookingDate" class="form-control" id="bookingDate" placeholder="Date of booking" [(ngModel)]="tableBooking.bookingDate">
+              </div>
+              <!-- <div class="col-lg-3 col-md-3 form-group mt-3 mt-md-3 formStyle text-center"></div>
+              <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-3 formStyle text-center">
+                <input type="number" class="form-control" name="amountToBePaid" id="amountToBePaid" placeholder="Amount to be paid">
+              </div>
+              <div class="col-lg-3 col-md-3 form-group mt-3 mt-md-3 formStyle text-center"></div><br/><br/> -->
+              <div class="col-lg-3 col-md-3 form-group mt-3 mt-md-3 formStyle text-center"></div>
+              <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-1">
+             <span  class="form-control" name="paidAmount" id="paidAmount" placeholder="# of paidAmount" >You are paying:{{values*100}}</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your
+                reservation. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Book a Table</button></div>
+            <br/>
+          </form>
+  
+        </div>
+      </section><!-- End Book A Table Section -->

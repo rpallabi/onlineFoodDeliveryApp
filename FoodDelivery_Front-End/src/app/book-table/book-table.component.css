@@ -1,0 +1,126 @@
+#book-a-table{
+    background-color: #0c0b09;
+  }
+  .book-a-table .bookTableForm {
+      width: 100%;
+    }
+    
+    .book-a-table .bookTableForm .form-group {
+      padding-bottom: 8px;
+    }
+    
+    .book-a-table .bookTableForm .validate {
+      display: none;
+      color: red;
+      margin: 0 0 15px 0;
+      font-weight: 400;
+      font-size: 13px;
+    }
+    
+    .book-a-table .bookTableForm .error-message {
+      display: none;
+      color: #fff;
+      background: #ed3c0d;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+    }
+    
+    .book-a-table .bookTableForm .error-message br + br {
+      margin-top: 25px;
+    }
+    
+    .book-a-table .bookTableForm .sent-message {
+      display: none;
+      color: #fff;
+      background: #18d26e;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+    
+    .book-a-table .bookTableForm .loading {
+      display: none;
+      text-align: center;
+      padding: 15px;
+    }
+    
+    .book-a-table .bookTableForm .loading:before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px -6px 0;
+      border: 3px solid #cda45e;
+      border-top-color: #1a1814;
+      -webkit-animation: animate-loading 1s linear infinite;
+      animation: animate-loading 1s linear infinite;
+    }
+    
+    .book-a-table .bookTableForm input, .book-a-table .bookTableForm textarea {
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 14px;
+      background: #0c0b09;
+      border-color: #625b4b;
+      color: white;
+    }
+    
+    .book-a-table .bookTableForm input::-webkit-input-placeholder, .book-a-table .bookTableForm textarea::-webkit-input-placeholder {
+      color: #a49b89;
+    }
+    
+    .book-a-table .bookTableForm input::-moz-placeholder, .book-a-table .bookTableForm textarea::-moz-placeholder {
+      color: #a49b89;
+    }
+    
+    .book-a-table .bookTableForm input::placeholder, .book-a-table .bookTableForm textarea::placeholder {
+      color: #a49b89;
+    }
+    
+    .book-a-table .bookTableForm input:focus, .book-a-table .bookTableForm textarea:focus {
+      border-color: #cda45e;
+    }
+    
+    .book-a-table .bookTableForm input {
+      height: 44px;
+    }
+    
+    .book-a-table .bookTableForm textarea {
+      padding: 10px 12px;
+    }
+    
+    .book-a-table .bookTableForm button[type="submit"] {
+      background: #cda45e;
+      border: 0;
+      padding: 10px 35px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 50px;
+    }
+    
+    .book-a-table .bookTableForm button[type="submit"]:hover {
+      background: #d3af71;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 2px;
+      opacity: 0.6;
+      filter: invert(0.8);
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator:hover {
+      opacity: 1
+    }
+    input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }

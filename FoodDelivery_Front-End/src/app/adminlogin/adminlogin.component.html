@@ -1,4 +1,4 @@
-<div class="container mt-5 " >
+<!--<div class="container mt-5 " >
     <h2 class=" text-center font-weight-bold mb-3 ms-5 text-dark fw-bolder"> Admin Login</h2>
     <div *ngIf="AdminloginError" class="error-message">{{ AdminloginError }}</div>
     <form (submit)="adminlogin()">
@@ -16,4 +16,50 @@
 <br>
         <button type="submit" class="btn btn-primary ms-5">Login</button>
     </form>
+</div>
+-->
+<div [style.display]="showModalAdminLogin ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <section class="vh-100 ">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-8 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                <div [ngStyle]="{'position': 'absolute', 'top': '0', 'right': '0'}">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">
+                                        <h4>&#10060;</h4>
+                                    </button>
+                                </div>
+                                <h2 class="fw-bold mb-2 text-uppercase"> Admin Login</h2>
+                                <div class=" mt-5 " class="text-center">
+                                    
+                                    <div *ngIf="AdminloginError" class="error-message">{{ AdminloginError }}</div>
+                                    <form (submit)="adminlogin()">
+                                        <div class="form-group ms-5">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
+                                            <span id="emailError" class="error"></span>
+                                        </div>
+
+                                        <div class="form-group ms-5">
+                                            <label for="password">Password:</label>
+                                            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
+                                            <span id="passwordError" class="error"></span>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary ms-5">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 </div>

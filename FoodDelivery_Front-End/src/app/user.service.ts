@@ -30,16 +30,18 @@ private baseURL = "http://localhost:8080/getAllUser";
   private loggedIn: boolean = false;
 
 
-  login(email: string, password: string): Observable<boolean> {
+  login(email: string, password: string): Observable<{ userId: string | null, loggedIn: boolean }> {
     return this.getUserList().pipe(
       map((users: any[]) => {
         const user = users.find(u => u.email === email && u.password === password);
         if (user) {
           this.loggedIn = true;
-          return true;
+          //return true;
+          return { userId: user.id, loggedIn: true };
         } else {
           this.loggedIn = false;
-          return false;
+          //return false;
+          return { userId: null, loggedIn: false };
         }
       })
     );

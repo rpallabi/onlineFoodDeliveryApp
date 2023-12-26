@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -19,6 +19,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "User")
 public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "U_id")
@@ -42,13 +43,46 @@ public class User {
 	@Column(name = "U_type", nullable = false, length = 50)
 	String userType;
 	
-	@JsonIgnore
+	@JsonManagedReference
 	@OneToMany(mappedBy = "admin")
 	List<Food> foods;
+	
+	
+	
+	 public List<TableBooking> getTableBookings() {
+		return tableBookings;
+	}
+
+	public void setTableBookings(List<TableBooking> tableBookings) {
+		this.tableBookings = tableBookings;
+	}
+	@JsonManagedReference
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<TableBooking> tableBookings;
 	
 	@JsonIgnore
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
  	public Delivery delivery;
+	
+	
+	public User() {
+        
+    }
+	
+	public User(int id, String userName, String password, String email, String phoneNumber, String address,
+			String userType, List<Food> foods, List<TableBooking> tableBookings, Delivery delivery) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.userType = userType;
+		this.foods = foods;
+		this.tableBookings = tableBookings;
+		this.delivery = delivery;
+	}
 	
 	public int getId() {
 		return id;

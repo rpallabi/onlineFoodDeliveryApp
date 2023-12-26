@@ -1,10 +1,12 @@
 package com.Restaurant.entities;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "Food")
@@ -39,17 +42,21 @@ public class Food {
 	@Column(name = "Image")
 	 String FoodImage;
 	
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name = "Admin_id")
 	public User admin;
 	
-	
+	/*
 	@JsonIgnore
 	@ManyToMany(mappedBy = "food")
 	public Set<OrderItems> orderItems = new HashSet<>();
 	
-
+*/
+	@JsonManagedReference
+	@OneToMany(mappedBy = "food", cascade = CascadeType.ALL)
+    private List<OrderItems> orderItems;
+	
 	public int getFid() {
 		return fid;
 	}
@@ -114,11 +121,5 @@ public class Food {
 		this.admin = admin;
 	}
 
-	public Set<OrderItems> getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(Set<OrderItems> orderItems) {
-		this.orderItems = orderItems;
-	}
+	
 }

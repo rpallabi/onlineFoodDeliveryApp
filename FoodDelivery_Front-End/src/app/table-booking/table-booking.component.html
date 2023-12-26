@@ -1,32 +1,84 @@
-<div class="container mt-5 " >
-    
+<!--<div class="container mt-5 ">
+
     <h2 class="mb-3 ms-5 text-dark fw-bolder">Book Your Table</h2>
-    <form >
+    <form (submit)="bookTable()">
         <div class="form-group col-md-8 ms-5">
-            <label for="numberOfSeats">number Of Seats:</label>
-            <input type="number" class="form-control" id="numberOfSeats"  name="numberOfSeats"  >
-            <span id="nameError" class="error"></span>
+            <label for="remainingSeats">User ID:</label>
+            <input type="number" class="form-control" id="userId"  name="userIdString" [(ngModel)]="userIdString">
+            <span id="userId" class="error"></span>
+        </div>
+        <div class="form-group col-md-8 ms-5">
+            <label for="numberOfSeats">Number Of Seats:</label>
+            <input type="number" class="form-control" id="numberOfSeats"  name="numberOfSeats" [(ngModel)]="values"
+                (keyup)="onKeyUp($event)"
+                [attr.disabled]="totalSeats<=0 ? '' : null"
+                >
+            <span id="nameError" class="error">{{errorMsg}}</span>
         </div>
         <div class="form-group col-md-8 ms-5">
             <label for="remainingSeats">remaining Seats:</label>
-            <input type="number" class="form-control" id="remainingSeats"  name="remainingSeats"  >
+            <label class="form-control" id="remainingSeats" name="remainingSeats">Ramaining Seats:
+                {{totalSeats}}</label>
             <span id="remainingSeats" class="error"></span>
         </div>
 
         <div class="form-group col-md-8 ms-5">
             <label for="bookingDate">booking Date:</label>
-            <input type="date" class="form-control" id="bookingDate"  name="bookingDate" >
+            <input type="date" class="form-control" id="bookingDate" name="bookingDate">
             <span id="bookingDate" class="error"></span>
         </div>
 
         <div class="form-group col-md-8 ms-5">
-            <label for="paidAmount">paid Amount:</label>
-            <input type="number" class="form-control" id="paidAmount"  name="paidAmount"  >
+            <label class="form-control" id="paidAmount" name="paidAmount">Amount to be paid:{{values*100}}</label>
             <span id="paidAmount" class="error"></span>
         </div>
-
-        
-<br>
+        <br>
         <button type="submit" class="btn btn-primary ms-5">Submit</button>
     </form>
 </div>
+-->
+<!--
+<div class="container mt-5 ">
+
+    <h2 class="mb-3 ms-5 text-dark fw-bolder">Book Your Table</h2>
+    <form (submit)="bookTable()">
+        <div class="form-group col-md-8 ms-5">
+            <label for="remainingSeats">User ID:</label>
+            <input type="number" class="form-control" id="userId"  name="userId" [(ngModel)]="userId">
+            <span id="userId" class="error"></span>
+        </div>
+        <div class="form-group col-md-8 ms-5">
+            <label for="numberOfSeats">Number Of Seats:</label>
+            <input type="number" class="form-control" id="numberOfSeats"  name="numberOfSeats" [(value)]="values"
+                (keyup)="onKeyUp($event)"
+                [attr.disabled]="totalSeats<=0 ? '' : null"
+                >
+            <span id="nameError" class="error">{{errorMsg}}</span>
+        </div>
+        <div class="form-group col-md-8 ms-5">
+            <label for="remainingSeats">remaining Seats:</label>
+            <input type="number" class="form-control" id="remainingSeats"  name="remainingSeats" [(ngModel)]="totalSeats">
+            
+            <span id="remainingSeats" class="error"></span>
+        </div>
+
+        <div class="form-group col-md-8 ms-5">
+            <label for="bookingDate">booking Date:</label>
+            <input type="date" class="form-control" id="bookingDate" name="bookingDate" [(ngModel)]="tableBooking.bookingDate">
+            <span id="bookingDate" class="error"></span>
+        </div>
+        <div class="form-group col-md-8 ms-5">
+            <label for="bookingDate">Amount to be paid:</label>
+            <input type="number" class="form-control" id="paidAmount" name="paidAmount" [(ngModel)]="tableBooking.paidAmount">
+            <span id="paidAmount" class="error"></span>
+        </div>
+        <div class="form-group col-md-8 ms-5">
+            
+            <label class="form-control" id="paidAmount" name="paidAmount">Total Ammount:{{values*100}}</label>
+            <span id="paidAmount" class="error"></span>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary ms-5">Submit</button>
+    </form>
+</div>
+-->

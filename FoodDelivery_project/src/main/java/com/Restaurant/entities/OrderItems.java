@@ -3,6 +3,7 @@ package com.Restaurant.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -14,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -34,12 +36,17 @@ public class OrderItems {
 	@Column(name = "Price")
 	int price;
      
-	@JsonIgnore
+	/*@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "order_item_food", 
 	joinColumns = @JoinColumn(name = "OI_id"), 
 	inverseJoinColumns = @JoinColumn(name = "F_id"))
 	public Set<Food> food = new HashSet<>();
+	*/
+	@JsonBackReference
+	 @ManyToOne
+	    @JoinColumn(name = "F_id")
+	    private Food food;
 	
 	@OneToOne(mappedBy = "orderitems", cascade = CascadeType.ALL)
  	public Orders orders;
@@ -76,13 +83,7 @@ public class OrderItems {
 		this.price = price;
 	}
 
-	public Set<Food> getFood() {
-		return food;
-	}
-
-	public void setFood(Set<Food> food) {
-		this.food = food;
-	}
+	
 
 	public Orders getOrders() {
 		return orders;
@@ -90,6 +91,14 @@ public class OrderItems {
 
 	public void setOrders(Orders orders) {
 		this.orders = orders;
+	}
+
+	public Food getFood() {
+		return food;
+	}
+
+	public void setFood(Food food) {
+		this.food = food;
 	}
 	
 

@@ -11,7 +11,8 @@ export class Food {
   quantity!: number;
   FoodImage!: string;
   adminId!: number ;
-  orderItems!: any[];
+  admin: User=new User();
+  //orderItems!: any[];
 
 
 }

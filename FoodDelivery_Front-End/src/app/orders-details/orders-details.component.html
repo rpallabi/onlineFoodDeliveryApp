@@ -1,0 +1,110 @@
+
+<p>orders works!</p>
+<!-- <div class="container">
+    <h1 class="text-center">Login with bootstrap popup</h1>
+    <button type="button" class="btn btn-primary" (click)="show()">Login</button>
+</div> -->
+<!-- Creates the bootstrap modal where the image will appear -->
+
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <section class="vh-100 ">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                
+                                <h2>Order Details</h2>
+                                
+                                        <div class="panel panel-default panel-order">
+                                            
+                                            <!-- Orders pannel -->
+                                            <div class="panel-body" >
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="info">
+                                                            <div class="row">
+                                                                <div class="col-7">
+                                                                    <span id="heading">Date</span><br>
+                                                                    <span id="details">10 October 2018</span>
+                                                                </div>
+                                                                <div class="col-5 pull-right">
+                                                                    <span id="heading">Order No.</span><br>
+                                                                    <span id="details">012j1gvs356c</span>
+                                                                </div>
+                                                            </div>      
+                                                        </div>      
+                                                      <!-- table -->
+                                                      <table class="table tableStyle">
+                                                        <thead class="thead-light">
+                                                          <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Food Name</th>
+                                                            <th scope="col">Quantity</th>
+                                                            <th scope="col">Price</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Luchi</td>
+                                                            <td>20</td>
+                                                            <td>350</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>Alurdom</td>
+                                                            <td>10</td>
+                                                            <td>600</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>Bode</td>
+                                                            <td>350</td>
+                                                            <td>50</td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      <!-- table end -->
+                                                        <div class="tracking">
+                                                            <div class="title">Tracking Order</div>
+                                                        </div>
+                                                        <div class="progress-track">
+                                                            <ul id="progressbar">
+                                                                <li class="step0 active " id="step1">Ordered</li>
+                                                                <li class="step0 active text-center" id="step2">Shipped</li>
+                                                                <li class="step0 active text-right" id="step3">On the way</li>
+                                                                <li class="step0 text-right" id="step4">Delivered</li>
+                                                            </ul>
+                                                        </div>
+                                                        
+                                            
+                                                        <div class="footer">
+                                                            <div class="row">
+                                                                <div class="col-10"><h5>Total Amount:10000/-</h5></div>
+                                                                <div class="col-10"><h6>Total Quantity:10</h6></div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <div [ngStyle]="{'position': 'absolute', 'top': '0', 'right': '0'}">
+                                                                <button type="button" class="btn" data-dismiss="modal" (click)="hide()">
+                                                                    <h4>&#10060;</h4>
+                                                                </button>
+                                                            </div>   
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

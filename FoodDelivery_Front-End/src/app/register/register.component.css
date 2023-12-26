@@ -1,0 +1,191 @@
+
+
+.bookTableForm {
+    width: 100%;
+  }
+  
+  .bookTableForm .form-group {
+    padding-bottom: 8px;
+  }
+  
+  .bookTableForm .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  
+  .bookTableForm .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .bookTableForm .error-message br + br {
+    margin-top: 25px;
+  }
+  
+  .bookTableForm .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .bookTableForm .loading {
+    display: none;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .bookTableForm .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #cda45e;
+    border-top-color: #1a1814;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  
+  .bookTableForm input, .bookTableForm textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    background: #0c0b09;
+    border-color: #625b4b;
+    color: white;
+  }
+  
+  .bookTableForm input::-webkit-input-placeholder, .bookTableForm textarea::-webkit-input-placeholder {
+    color: #a49b89;
+  }
+  
+  .bookTableForm input::-moz-placeholder, .bookTableForm textarea::-moz-placeholder {
+    color: #a49b89;
+  }
+  
+  .bookTableForm input::placeholder, .bookTableForm textarea::placeholder {
+    color: #a49b89;
+  }
+  
+  .bookTableForm input:focus, .bookTableForm textarea:focus {
+    border-color: #cda45e;
+  }
+  
+  .bookTableForm input {
+    height: 44px;
+  }
+  
+  .bookTableForm textarea {
+    padding: 10px 12px;
+  }
+  
+  .bookTableForm button[type="submit"] {
+    background: #cda45e;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .bookTableForm button[type="submit"]:hover {
+    background: #d3af71;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1
+  }
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+imput{
+    border-radius: 20% !important;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #cda45e;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #cda45e;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

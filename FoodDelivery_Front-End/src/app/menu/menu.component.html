@@ -1,0 +1,89 @@
+<!-- ======= Menu Section ======= -->
+<section id="menu" class="menu section-bg">
+    <br/>
+      <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+              <h2>Menu</h2>
+          </div>
+  
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-12 d-flex justify-content-center">
+                  <ul id="menu-flters">
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('all')">
+                              All
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('starter')">
+                              Starters
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('veg')">
+                              veg
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('nonVeg')">
+                              Non-veg
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('pnb')">
+                              Pizza and Burgers
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('salad')">
+                              Salads
+                          </button>
+                      </li>
+                      <li>
+                          <button class="btn bg-transparent btnStyle" (click)="fetchMenu('drink')">
+                              Drinks
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+              <section class="product">
+                  <div class="container-fluid">
+                      <div class="slider-wrap" #widgetsContent>
+                          <div class="slider-main">
+                              <!--<img src="../../assets/offer1.png" alt="Offer">-->
+                              <a href="#" class="card-link" style="margin-top: 14rem;">
+                                  <div class="card cardStyle" *ngFor='let food of currentMenu;let i = index'>
+                                      <!-- Card style -->
+                                      <img class="card-img-top cardimageStyle" src="../../assets/img/{{food.foodImage}}" alt="Card image cap">
+                                      <div class="card-body">
+                                          <h5 class="card-title">{{food.foodname}}</h5>
+                                          <p class="card-text">{{food.description}}</p>
+                                          <p class="card-text"><b>Price: ₹{{food.price}} </b></p>
+                                          <a href="#" class="btn addToCardStyle text-center book-a-table-btn">Add</a>
+                                        </div>
+                                          <!-- <div class="card-body">
+                                            <h5 class="card-title">Dal vat choka</h5>
+                                          </div>
+                                          <ul class="list-group-flush">
+                                            <li class="list-group-item"><b>Price:100</b></li>
+                                          </ul>
+                                          <div class="card-body addToCardStyle text-center book-a-table-btn " >
+                                            <a href="#" class="card-link">Add</a>
+                                          </div> -->
+                                        
+                                  </div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+  
+  
+          </div>
+  
+      </div>
+  </section><!-- End Menu Section -->

@@ -6,21 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Restaurant.entities.TableBooking;
+import com.Restaurant.entities.User;
 import com.Restaurant.repository.TableBookingRepository;
+import com.Restaurant.repository.UserRepository;
 import com.Restaurant.service.TableBookingService;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class TableBookingServiceImp implements TableBookingService{
 
+	
 	@Autowired
 	TableBookingRepository tb;
 
 	@Override
 	public TableBooking createBooking(TableBooking tablebooking) {
-
 		return tb.save(tablebooking);
 	}
 
+	
+
+	
 	@Override
 	public List<TableBooking> getAllBooking() {
 		List<TableBooking> le = tb.findAll();

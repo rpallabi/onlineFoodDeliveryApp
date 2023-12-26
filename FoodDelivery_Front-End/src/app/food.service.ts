@@ -45,8 +45,11 @@ export class FoodService {
   }
   
 */
-private saveFoodURL = "http://localhost:8080/saveFood";
+  id: any;
+  ID!: Number;
   
+private saveFoodURL = "http://localhost:8080/saveFood";
+private FoodListURL = "http://localhost:8080/getAllFoods";
   
  constructor(private httpClient: HttpClient){}
  /*
@@ -61,14 +64,21 @@ return this.httpClient.post(`${this.saveFoodURL}`,formData);
  
  saveFood(food: Food, image: File): Observable<Food> {
   const formData: FormData = new FormData();
+  
+ // formData.append('admin', JSON.stringify({ id: food.admin.id }));
   formData.append('foodname', food.foodname);
   formData.append('type', food.type);
   formData.append('description', food.description);
   formData.append('price', food.price.toString());
   formData.append('quantity', food.quantity.toString());
   formData.append('image', image);
+  
    return this.httpClient.post<Food>(`${this.saveFoodURL}`, formData);
 }
+getFoodList(){
+  return this.httpClient.get<Food[]>(`${this.FoodListURL}`);
+}
+
 }
 
 

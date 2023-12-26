@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { User } from '../user';
 import { UserService } from '../user.service';
 @Component({
@@ -12,11 +12,15 @@ export class LoginComponent implements OnInit{
   email: string = '';
   password: string = '';
   loginError: string = '';
-constructor(private userService : UserService, private router:Router){
+  userId!: string | null;
+  
+
+constructor(private userService : UserService, private router:Router,private route: ActivatedRoute){
 }
 ngOnInit(): void {
     
 }
+/*
 login(): void {
   this.userService.login(this.email, this.password).subscribe(
     (success) => {
@@ -31,7 +35,25 @@ login(): void {
     }
   );
 }
-}
-  
-  
+*/
 
+login(): void {
+  this.userService.login(this.email, this.password)
+    .subscribe((result: { userId: string | null, loggedIn: boolean }) => {
+      if (result.loggedIn) {
+
+        this.userId = result.userId; 
+        console.log('UserID:', this.userId);
+        alert("Success");
+        this.router.navigate(['/TableBooking',this.userId]);
+
+      } else {
+        this.loginError = 'Invalid username or password';
+        alert("Invalid credentials. Please try again.");
+        console.log('Invalid credentials. Please try again.');
+        
+      }
+    });
+}
+
+}

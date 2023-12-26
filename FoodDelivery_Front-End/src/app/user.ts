@@ -1,4 +1,7 @@
 import { DatePipe } from "@angular/common";
+import { TableBooking } from "./table-booking";
+
+
 
 export class User {
     
@@ -9,7 +12,7 @@ export class User {
         phoneNumber!: String;
         address!: String;
         userType!: String;
-  
+        //tableBookings!: TableBooking[];
 
     
 }

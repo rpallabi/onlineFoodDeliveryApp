@@ -1,0 +1,127 @@
+<!--<div class="">
+    <div class="offersStyle">
+        <h2>Best offers for you !
+            <h1 class="arrowStyle">
+                <button class="btn bg-transparent" (click)="scrollLeft()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
+                </button>&nbsp;
+                <button class="btn bg-transparent" (click)="scrollRight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg>
+                </button>
+            </h1>
+    
+        </h2>
+        <section class="product">
+            <div class="container-fluid">
+                <h1 class="text-center text-uppercase">Food Order Card</h1>
+                <div class="slider-wrap" #widgetsContent>
+                    <div class="slider-main">
+                        
+                        <div class="container">
+                            
+                            <br>
+                            <br>
+                            <div class="row">
+                        <div class="container col-sm-6 col-md-6 col-lg-4"*ngFor= "let food of foods">
+                            <div class="food-card" >
+                                <div class="food-card_img float-left">
+                                    
+                                    <img src ="https://plus.unsplash.com/premium_photo-1661600135596-dcb910b05340?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                                    <a href="#!"><i class="far fa-heart"></i></a>
+                                </div>
+                                <div class="food-card_content">
+                                    <div class="food-card_title-section">
+                                        <a href="#!" class="food-card_title">{{food.description}}</a>
+                                        <a href="#!" class="food-card_author">{{food.foodname}}</a>
+                                    </div>
+                                    <div class="food-card_bottom-section">
+                                        <div class="space-between">
+                                            <div>
+                                                <span class="fa fa-fire"></span> {{food.type}}
+                                            </div>
+                                            <div class="pull-right">
+                                                <span class="badge badge-success"></span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="space-between">
+                                            <div class="food-card_price">
+                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+                                                  </svg>{{food.price}}</span>
+                                            </div>
+                                            <div class="food-card_order-count">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
+                                                    </div>
+                                                    <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    
+    </div>
+    </div>
+--> 
+
+  <!-- ======= Top Of the Nav ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone d-flex align-items-center"><span></span></i>
+        <i class="bi bi-clock d-flex align-items-center ms-4"><span></span></i>
+      </div>
+
+      <div class="languages d-none d-md-flex align-items-center">
+        <ul>
+          <!--  <a class="login-btn scrollto d-none d-lg-flex" routerLink="/userlogin" routerLinkActrive="active" style="text-decoration:none">Sign in</a>-->
+          <!--<a class="login-btn scrollto d-none d-lg-flex" routerLinkActrive="active" style="text-decoration:none" (click)="loginLogout()">{{isLoggedIn}}</a>-->
+          <a class="login-btn scrollto d-none d-lg-flex" routerLinkActrive="active" style="text-decoration:none"
+          (click)="loginLogout()">
+          <span [hidden]="isLogin" class="login-btn " >login</span>
+          <span [hidden]="!isLogin" class="login-btn" style="z-index: -10;">Logout</span>
+        </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+   <!-- ======= Bottom of the Nav ======= -->
+   <section id="home" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to <span>Fooode<span style="font-size:larger;">X</span></span></h1>
+          <h2>Where every flavor tells a story!</h2>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto" style="text-decoration:none">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto" style="text-decoration:none">Book a Table</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
